@@ -9,6 +9,10 @@ import java.util.List;
 
 @Repository
 public interface MovieRepository extends CrudRepository<Movie,Integer> {
+
+   /*Add an endpoint to search trackByName.
+   Understand @Query and parameter passing to @Query
+   */
    @Query(value = "select movie.movieTitle from Movie movie where movie.movieTitle = ?1")
     public List<Movie> findByName(String name);
 }

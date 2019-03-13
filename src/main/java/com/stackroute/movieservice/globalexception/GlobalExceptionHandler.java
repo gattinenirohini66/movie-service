@@ -7,10 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice
+@ControllerAdvice // any exception comes here when it was thrown
 public class GlobalExceptionHandler {
+    // this are my exception clases
     @ExceptionHandler({MovieAlreadyExistsException.class, MovieNotFoundException.class})
-    public ResponseEntity<String> handleMoviealreadyExistException(Exception e){
-        return new ResponseEntity<String>("Global Exception thrown here "+ e.getMessage(), HttpStatus.CONFLICT);
+    public ResponseEntity<String> handleMoviealreadyExistException(Exception e) {
+        return new ResponseEntity<String>("Global Exception thrown here " + e.getMessage(), HttpStatus.CONFLICT);
     }
 }

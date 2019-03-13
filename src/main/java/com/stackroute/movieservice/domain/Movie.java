@@ -5,17 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data // used to generate setters and getters
+@NoArgsConstructor // used to generate default constructor
+@AllArgsConstructor // used to generate argument constructor
 public class Movie {
-    @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id // making id as primary key
+    /*
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        used to generate id automatically
+     */
     private int movieId;
     private String movieTitle;
     private String overview;
