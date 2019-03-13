@@ -39,13 +39,13 @@ public class MovieController {
     // To get the movies based on id
     @GetMapping("/movie/{id}")
     public ResponseEntity<Optional<Movie>> getMovieById(@PathVariable int id) {
-        return new ResponseEntity<Optional<Movie>>(movieService.getMovieById(id), HttpStatus.OK);
+        return new ResponseEntity<Optional<Movie>>(movieService.getMovieById(id), HttpStatus.FOUND);
     }
 
     // To get the movie by name
     @GetMapping("/movies/{name}")
     public ResponseEntity<List<Movie>> findByName(@PathVariable String name) throws MovieNotFoundException {
-        return new ResponseEntity<List<Movie>>(movieService.findByName(name), HttpStatus.CREATED);
+        return new ResponseEntity<List<Movie>>(movieService.findByName(name), HttpStatus.FOUND);
     }
 
     // Deleting particular movie based on id
